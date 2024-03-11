@@ -21,10 +21,6 @@ public class UserService {
     @Autowired
     private ValidationService validationService;
 
-    private static RuntimeException get() {
-        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Username or password wrong");
-    }
-
     @Transactional
     public void register(RegisterUserRequest request) {
         validationService.validate(request);
